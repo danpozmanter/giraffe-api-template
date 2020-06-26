@@ -36,8 +36,8 @@ Remove-OldBuildArtifacts
 
 # Test Giraffe template
 Write-Host "Building and testing Giraffe tempalte..." -ForegroundColor Magenta
-$giraffeApp     = "src/content/Giraffe/src/AppNamePlaceholder/AppNamePlaceholder.fsproj"
-$giraffeTests   = "src/content/Giraffe/tests/AppNamePlaceholder.Tests/AppNamePlaceholder.Tests.fsproj"
+$giraffeApp     = "src/content/Giraffe/src/AppNamePlaceholder.fsproj"
+$giraffeTests   = "src/content/Giraffe/tests/AppNamePlaceholder.Tests.fsproj"
 
 dotnet-restore $giraffeApp
 dotnet-build   $giraffeApp

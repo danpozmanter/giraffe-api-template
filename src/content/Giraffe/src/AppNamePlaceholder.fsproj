@@ -23,5 +23,5 @@
     <None Include="web.config" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 
-  <Import Condition="'$(UsePaket)' == true" Project="..\..\.paket\Paket.Restore.targets" />
+  <Import Condition="'$(UsePaket)' == true" Project="..\.paket\Paket.Restore.targets" />
 </Project>
