@@ -54,26 +54,15 @@ let shouldContain (expected : string) (actual : string) =
 // ---------------------------------
 
 [<Fact>]
-let ``Route / returns "Hello world, from Giraffe!"`` () =
+let ``Route /api/hello returns "Hello world, from Giraffe!"`` () =
     use server = new TestServer(createHost())
     use client = server.CreateClient()
 
     client
-    |> httpGet "/"
+    |> httpGet "/api/hello"
     |> ensureSuccess
     |> readText
     |> shouldContain "Hello world, from Giraffe!"
-
-[<Fact>]
-let ``Route /hello/fooBar returns "Hello fooBar, from Giraffe!"`` () =
-    use server = new TestServer(createHost())
-    use client = server.CreateClient()
-
-    client
-    |> httpGet "/hello/fooBar"
-    |> ensureSuccess
-    |> readText
-    |> shouldContain "Hello fooBar, from Giraffe!"
 
 [<Fact>]
 let ``Route which doesn't exist returns 404 Page not found`` () =

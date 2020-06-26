@@ -1,8 +1,7 @@
-#!/bin/sh
 #if (UsePaket)
 if [ ! -e "paket.lock" ]
 then
-    exec mono .paket/paket.exe install
+    dotnet tool install Paket
 fi
 #endif
 dotnet restore src/AppNamePlaceholder

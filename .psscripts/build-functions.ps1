@@ -118,7 +118,7 @@ function Get-ProjectVersion ($projFile)
     $version
 }
 
-function Get-NuspecVersion ($nuspecFile)
+function Get-BuildVersion ($buildFile)
 {
     <#
         .DESCRIPTION
@@ -128,8 +128,8 @@ function Get-NuspecVersion ($nuspecFile)
         The relative or absolute path to the .nuspec file.
     #>
 
-    [xml] $xml = Get-Content $nuspecFile
-    [string] $version = $xml.package.metadata.version
+    [xml] $xml = Get-Content $buildFile
+    [string] $version = $xml.Project.PropertyGroup.Version
     $version
 }
 
@@ -194,15 +194,6 @@ function Get-NetCoreTargetFramework ($projFile)
 
 function Invoke-DotNetCli ($cmd, $proj, $argv)
 {
-    # Currently dotnet test does not work for net461 on Linux/Mac
-    # See: https://github.com/Microsoft/vstest/issues/1318
-
-    if((!(Test-IsWindows) -and !(Test-IsMonoInstalled)) `
-        -or (!(Test-IsWindows) -and ($cmd -eq "test")))
-    {
-        $fw = Get-NetCoreTargetFramework($proj)
-        $argv = "-f $fw " + $argv
-    }
     Invoke-Cmd "dotnet $cmd $proj $argv"
 }
 

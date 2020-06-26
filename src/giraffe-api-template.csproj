@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <PackageType>Template</PackageType>
+    <PackageId>giraffe-api-template</PackageId>
+    <Version>0.0.1</Version>
+    <Title>Giraffe API Template for dotnet new</Title>
+    <PackageTags>Giraffe;Web App;API;Micro Service;Dotnet New Template</PackageTags>
+    <Description>A dotnet new template for Giraffe API applications.</Description>
+    <Authors>Dan Pozmanter building off work by Dustin Moris Gorski, David Sinclair and contributors</Authors>
+    <Owners>Dan Pozmanter</Owners>
+    <IncludeContentInPack>true</IncludeContentInPack>
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+    <ContentTargetFolders>content</ContentTargetFolders>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="content\**\*" Exclude="content\**\bin\**;content\**\obj\**" />
+    <Compile Remove="**\*" />
+  </ItemGroup>
+</Project>

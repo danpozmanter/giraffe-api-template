@@ -15,3 +15,12 @@ module HttpHandlers =
                 }
                 return! json response next ctx
             }
+
+    let handlePostHello =
+        fun (next : HttpFunc) (ctx : HttpContext) ->
+            task {
+                let response = {
+                    Text = "Hello world, from Giraffe!"
+                }
+                return! json response next ctx
+            }

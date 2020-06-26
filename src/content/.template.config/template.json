@@ -1,37 +1,14 @@
 {
-  "identity": "Giraffe.Template",
-  "shortName": "giraffe",
-  "name": "Giraffe Web App",
-  "author": "Dustin Moris Gorski, David Sinclair and contributors",
-  "classifications": [ "Web", "Giraffe", "ASP.NET" ],
+  "identity": "GiraffeAPI.Template",
+  "shortName": "giraffeapi",
+  "name": "Giraffe API",
+  "author": "Dan Pozmanter, Dustin Moris Gorski, David Sinclair and contributors",
+  "classifications": [ "Web", "Giraffe", "ASP.NET", "API" ],
   "tags": {
     "language": "F#"
   },
   "sourceName": "AppNamePlaceholder",
   "symbols": {
-    "ViewEngine": {
-      "type": "parameter",
-      "dataType": "choice",
-      "defaultValue": "giraffe",
-      "choices": [
-        {
-          "choice": "giraffe",
-          "description": "Default GiraffeViewEngine"
-        },
-        {
-          "choice": "razor",
-          "description": "MVC Razor views"
-        },
-        {
-          "choice": "dotliquid",
-          "description": "DotLiquid template engine"
-        },
-        {
-          "choice": "none",
-          "description": "No template engine (API only)"
-        }
-      ]
-    },
     "IncludeTests": {
       "type": "parameter",
       "dataType": "bool",
@@ -47,52 +24,6 @@
     {
       "source": "./Giraffe/",
       "target": "./",
-      "condition": "(ViewEngine == \"giraffe\")",
-      "modifiers": [
-        {
-          "condition": "(!IncludeTests)",
-          "exclude": [ "**/AppNamePlaceholder.Tests/**/*" ]
-        },
-        {
-          "condition": "(!UsePaket)",
-          "exclude": [ "**/paket.*" ]
-        }
-      ]
-    },
-    {
-      "source": "./Razor/",
-      "target": "./",
-      "condition": "(ViewEngine == \"razor\")",
-      "modifiers": [
-        {
-          "condition": "(!IncludeTests)",
-          "exclude": [ "**/AppNamePlaceholder.Tests/**/*" ]
-        },
-        {
-          "condition": "(!UsePaket)",
-          "exclude": [ "**/paket.*" ]
-        }
-      ]
-    },
-    {
-      "source": "./DotLiquid/",
-      "target": "./",
-      "condition": "(ViewEngine == \"dotliquid\")",
-      "modifiers": [
-        {
-          "condition": "(!IncludeTests)",
-          "exclude": [ "**/AppNamePlaceholder.Tests/**/*" ]
-        },
-        {
-          "condition": "(!UsePaket)",
-          "exclude": [ "**/paket.*" ]
-        }
-      ]
-    },
-    {
-      "source": "./None/",
-      "target": "./",
-      "condition": "(ViewEngine == \"none\")",
       "modifiers": [
         {
           "condition": "(!IncludeTests)",
@@ -114,10 +45,6 @@
           "exclude": [ "**/AppNamePlaceholder.Tests/**/*" ]
         }
       ]
-    },
-    {
-      "source": "./_Default/",
-      "target": "./"
     }
   ],
   "postActions": [{

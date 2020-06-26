@@ -1,8 +1,12 @@
-# Giraffe Template
+# Giraffe API Template
 
 ![Giraffe](https://raw.githubusercontent.com/giraffe-fsharp/Giraffe/master/giraffe.png)
 
-Giraffe web application template for the `dotnet new` command.
+Giraffe API template for the `dotnet new` command. Building off the original giraffe template.
+
+Updated to use dotnet core 3.1 (from 2.1), and to avoid using mono on linux.
+Also updated to change the defaults and remove Razor and DotLiquid, in favor of an API first approach.
+Now uses msbuild and dotnet pack instead of nuget pack - for improved cross platform compatibility.
 
 [![NuGet Info](https://buildstats.info/nuget/giraffe-template)](https://www.nuget.org/packages/giraffe-template/)
 
@@ -25,10 +29,12 @@ Giraffe web application template for the `dotnet new` command.
 The easiest way to install the Giraffe template is by running the following command in your terminal:
 
 ```
-dotnet new -i "giraffe-template::*"
+dotnet new -i "giraffe-api-template::*"
 ```
 
 This will pull and install the [giraffe-template NuGet package](https://www.nuget.org/packages/giraffe-template/) in your .NET environment and make it available to subsequent `dotnet new` commands.
+
+**(Note - not yet pushed to nuget)**
 
 ## Basics
 
@@ -50,58 +56,9 @@ Please be also aware that you cannot name your project "giraffe" (`dotnet new gi
 
 Further information and more help can be found by running `dotnet new giraffe --help` in your terminal.
 
-### ATTENTION: dotnet new bug in some versions of .NET Core 2.0
-
-Affected SDKs:
-
-- .NET SDK 2.1.X where X < 300
-- This was fixed in SDK versions 2.1.300+
-- Why? It's a bug in the templating engine: (https://github.com/dotnet/templating/issues/1373)
-- This affects all templates which support only one language (like Giraffe which only supports F#)
-- The behavior is such that when you run `dotnet new [template]` you may not get any errors and it will just output the `--help` text for the template & CLI.
-
-How can I know what version of the SDK I use?
-
-```
-dotnet --info
-```
-
-Short term fix:
-
-Just specify the language when invoking, like
-
-```
-dotnet new giraffe -lang F#
-```
-
-Long term fix:
-
-Upgrade your SDK to versions 2.1.300+ (.NET Core 2.1)
+### ATTENTION: Use with .NET Core 3.1 or higher.
 
 ## Optional parameters
-
-### --ViewEngine
-
-The Giraffe template supports three different view engines:
-
-- `giraffe` (default)
-- `razor`
-- `dotliquid`
-- `none`
-
-You can optionally specify the `--ViewEngine` parameter (short `-V`) to pass in one of the supported values:
-
-```
-dotnet new giraffe --ViewEngine razor
-```
-
-The same using the abbreviated `-V` parameter:
-
-```
-dotnet new giraffe -V razor
-```
-
-If you do not specify the `--ViewEngine` parameter then the `dotnet new giraffe` command will automatically create a Giraffe web application with the default `GiraffeViewEngine` engine.
 
 ### --IncludeTests
 

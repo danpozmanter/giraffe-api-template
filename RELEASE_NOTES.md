@@ -1,6 +1,16 @@
 Release Notes
 =============
 
+# giraffe-api-template
+
+## 0.0.1
+
+- Simplifying template to support an API-first design, removing DotLiquid and Razor.
+- dotnet pack instead of nuget pack for better cross platform useage.
+- Upgrade dotnet core version and remove need for mono.
+
+# giraffe-template
+
 ## 0.20.0
 
 - Added shebang and fixed shellcheck warnings

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <package>
     <metadata>
-        <id>giraffe-template</id>
-        <version>0.20.0</version>
-        <title>Giraffe Template for dotnet-new</title>
-        <summary>A dotnet-new template for Giraffe web applications.</summary>
-        <description>A dotnet-new template for Giraffe web applications.</description>
-        <authors>Dustin Moris Gorski, David Sinclair and contributors</authors>
-        <owners>Dustin Moris Gorski</owners>
+        <id>giraffe-api-template</id>
+        <version>0.0.1</version>
+        <title>Giraffe API Template for dotnet-new</title>
+        <summary>A dotnet-new template for Giraffe API applications.</summary>
+        <description>A dotnet-new template for Giraffe API applications.</description>
+        <authors>Dan Pozmanter building off work by Dustin Moris Gorski, David Sinclair and contributors</authors>
+        <owners>Dan Pozmanter</owners>
         <projectUrl>https://github.com/giraffe-fsharp/giraffe-template</projectUrl>
         <iconUrl>https://raw.githubusercontent.com/giraffe-fsharp/Giraffe/master/giraffe-64x64.png</iconUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
