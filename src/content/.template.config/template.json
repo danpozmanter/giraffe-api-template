@@ -27,7 +27,7 @@
       "modifiers": [
         {
           "condition": "(!IncludeTests)",
-          "exclude": [ "**/AppNamePlaceholder.Tests/**/*" ]
+          "exclude": [ "**/tests/*" ]
         },
         {
           "condition": "(!UsePaket)",
@@ -42,7 +42,7 @@
       "modifiers": [
         {
           "condition": "(!IncludeTests)",
-          "exclude": [ "**/AppNamePlaceholder.Tests/**/*" ]
+          "exclude": [ "**/tests/*" ]
         }
       ]
     }
