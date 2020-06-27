@@ -41,13 +41,13 @@ This will pull and install the [giraffe-template NuGet package](https://www.nuge
 After the template has been installed you can create a new Giraffe web application by simply running `dotnet new giraffe` in your terminal:
 
 ```
-dotnet new giraffe
+dotnet new giraffeapi
 ```
 
 If you wish to use [Paket](https://fsprojects.github.io/Paket/) for your dependency management use the `--UsePaket` parameter when creating a new application:
 
 ```
-dotnet new giraffe --UsePaket
+dotnet new giraffeapi --UsePaket
 ```
 
 The Giraffe template only supports the F# language at the moment.
@@ -65,13 +65,7 @@ Further information and more help can be found by running `dotnet new giraffe --
 When creating a new Giraffe web application you can optionally specify the `--IncludeTests` (short `-I`) parameter to automatically generate a default unit test project for your application:
 
 ```
-dotnet new giraffe --IncludeTests
-```
-
-This parameter can also be combined with other parameters:
-
-```
-dotnet new giraffe --ViewEngine razor --IncludeTests
+dotnet new giraffeapi --IncludeTests
 ```
 
 ### --UsePaket
@@ -95,26 +89,8 @@ Whenever there is a new version of the Giraffe template you can update it by re-
 You can also explicitly set the version when installing the template:
 
 ```
-dotnet new -i "giraffe-template::0.11.0"
+dotnet new -i "giraffe-api-template::0.0.1"
 ```
-
-## Nightly builds and NuGet feed
-
-All official Giraffe packages are published to the official and public NuGet feed.
-
-Unofficial builds (such as pre-release builds from the `develop` branch and pull requests) produce unofficial pre-release NuGet packages which can be pulled from the project's public NuGet feed on AppVeyor:
-
-```
-https://ci.appveyor.com/nuget/giraffe-template
-```
-
-If you add this source to your NuGet CLI or project settings then you can pull unofficial NuGet packages for quick feature testing or urgent hot fixes.
-
-## Using Visual Studio
-
-The basic giraffe template doesn't work with `IIS Express` which may be the default IIS used by Visual Studio 2017 to build & publish your application. Make sure to change your drop-down (the top of your window, next to the other Configuration Manager settings) IIS setting to be the name of your project and *NOT* `IIS Express`. Example:
-
-![](https://user-images.githubusercontent.com/3818802/39714515-5535b446-51f8-11e8-9b76-9c89a3e70eea.png)
 
 ## Contributing
 
