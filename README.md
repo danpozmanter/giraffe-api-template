@@ -8,8 +8,6 @@ Updated to use dotnet core 3.1 (from 2.1), and to avoid using mono on linux.
 Also updated to change the defaults and remove Razor and DotLiquid, in favor of an API first approach.
 Now uses msbuild and dotnet pack instead of nuget pack - for improved cross platform compatibility.
 
-- In active development -.
-
 <!-- [![NuGet Info](https://buildstats.info/nuget/giraffe-api-template)](https://www.nuget.org/packages/giraffe-api-template/) -->
 
 ## Table of contents
